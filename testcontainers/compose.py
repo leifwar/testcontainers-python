@@ -117,5 +117,5 @@ class DockerCompose(object):
 
     @wait_container_is_ready()
     def wait_for(self, url):
-        requests.get(url)
+        requests.get(url).raise_for_status()
         return self
